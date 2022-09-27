@@ -17,7 +17,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-connectDB();
+const clientPromise = connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -41,7 +41,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: MongoStore.create({ clientPromise: clientPromise}),
   })
 );
 
