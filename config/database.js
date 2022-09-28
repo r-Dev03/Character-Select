@@ -4,10 +4,11 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
+      useUnifiedTopology: true
+      // useFindAndModify: false,
+      // useCreateIndex: true,
     });
+    return conn.connection.getClient()
 
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
