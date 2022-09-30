@@ -9,6 +9,10 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
+const profileRoutes = require("./routes/profile")
+const topRoutes = require("./routes/tops")
+const bottomRoutes = require("./routes/bottoms")
+const supportRoutes = require("./routes/support")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -54,6 +58,10 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
+app.use("/profile", profileRoutes)
+app.use("/tops", topRoutes)
+app.use("/bottoms", bottomRoutes)
+app.use("/support", supportRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {
