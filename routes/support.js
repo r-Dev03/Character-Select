@@ -5,6 +5,6 @@ const supportController = require("../controllers/support");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Top Routes - simplified for now
-router.get("/support", supportController.getSupport);
+router.get("/", supportController.getSupport);
 
 module.exports = router;

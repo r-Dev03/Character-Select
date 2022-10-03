@@ -5,6 +5,6 @@ const bottomController = require("../controllers/bottoms");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Top Routes - simplified for now
-router.get("/bottoms", bottomController.getBottoms);
+router.get("/", bottomController.getBottoms);
 
 module.exports = router;
