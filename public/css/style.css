@@ -220,7 +220,7 @@ footer {
      margin-top: 20px;
  }
 
- .tops {
+ .tops, .bottoms {
      color: #fff;
      background-color:#171718;
  }
