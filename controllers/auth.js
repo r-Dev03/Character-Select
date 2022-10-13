@@ -1,6 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+//Test
 
 exports.getLogin = (req, res) => {
   if (req.user) {
