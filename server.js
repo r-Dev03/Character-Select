@@ -13,6 +13,7 @@ const profileRoutes = require("./routes/profile")
 const topRoutes = require("./routes/tops")
 const bottomRoutes = require("./routes/bottoms")
 const supportRoutes = require("./routes/support")
+const checkoutRoutes = require("./routes/checkout")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -62,6 +63,7 @@ app.use("/profile", profileRoutes)
 app.use("/tops", topRoutes)
 app.use("/bottoms", bottomRoutes)
 app.use("/support", supportRoutes)
+app.use("/checkout", checkoutRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {
