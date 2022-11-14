@@ -146,6 +146,41 @@ footer {
      transition: opacity 1s ease-in;
    }
 
+   .mini-cart {
+     position: fixed;
+     top: 7%;
+     left: 100%;
+     width: 100%;
+     min-height: 100vh;
+     display: block;
+     z-index: 98;
+     padding-top: 120px;
+     background-color: #FBFAE6;
+     color: #171718;
+     transition: 0.4s;
+
+}
+
+.mini-cart.is-active {
+     left: 0;
+}
+
+.mini-cart ul li  {
+     display: block;
+     text-align: center;
+     width: 100%;
+     max-width: 200px;
+     margin: 0 auto 16px;
+     padding: 12px 16px;
+     border: solid 2px black; 
+}
+
+.mini-cart .flex {
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 0 40px;
+}
+
 
 /******************************************
 /* Navbar
