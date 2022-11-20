@@ -322,6 +322,7 @@ footer {
      width: 50%;
      height: 50%;
      margin-top: 40px;
+     flex-wrap: wrap;
  }
 
  .products img {
