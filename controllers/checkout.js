@@ -6,7 +6,7 @@ module.exports = {
       res.render("checkout.ejs");
     },
 
-    getProducts: async (req, res) => {
-
+    getCart: async (req, res) => {
+ 
+    },
     }
-  };
