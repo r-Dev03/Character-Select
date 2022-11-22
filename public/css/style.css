@@ -330,6 +330,11 @@ footer {
      height: 100%;
  }
 
+ #size {
+     width: 50%;
+     margin-left: 25%;
+ }
+
  .container .flex {
      align-items: flex-start;
  }
