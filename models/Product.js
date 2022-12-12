@@ -13,6 +13,10 @@ const ProductSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
+    size: {
+      type: String,
+      require: true,
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

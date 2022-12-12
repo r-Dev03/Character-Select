@@ -65,6 +65,7 @@ app.use("/tops", topRoutes)
 app.use("/bottoms", bottomRoutes)
 app.use("/support", supportRoutes)
 app.use("/checkout", checkoutRoutes)
+app.use("/cart", cartRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {

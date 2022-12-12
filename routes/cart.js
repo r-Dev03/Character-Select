@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
-const checkoutController = require("../controllers/cart");
+const cartController = require("../controllers/cart");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", checkoutController.getCart);
+router.get("/", cartController.getCart);
 
 module.exports = router;
