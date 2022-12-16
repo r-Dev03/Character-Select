@@ -7,4 +7,5 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Top Routes - simplified for now
 router.get("/", topsController.getTops);
 
+
 module.exports = router;

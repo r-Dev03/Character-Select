@@ -17,6 +17,10 @@ const ProductSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
+    price: {
+      type: Number,
+      require: true,
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
