@@ -25,6 +25,7 @@ cart.addEventListener('click', () => {
   menu.classList.toggle('is-active') 
 })
 
+//Shoppping Cart Functionality 
 
 async function initCart() {
   const res = await fetch("/cart")

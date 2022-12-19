@@ -7,15 +7,15 @@ const clientPromise = connectDB();
 async function run() {
     await clientPromise
     const product = new Product({
-        name: "bob",
+        name: "Kirby T-Shirt",
 
-        image: "something",
+        image: "https://res.cloudinary.com/dtyc44fjq/image/upload/v1668981945/Clothing%20Store/FRONT1-Black_fpedxk.jpg",
 
-        cloudinaryId: "124",
+        cloudinaryId: "v1668981945",
 
-        size: "small",
+        size: "Small",
 
-        price: 200,
+        price: 10,
     })
     await product.save()
     console.log("added product successfully!")
