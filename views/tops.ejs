@@ -48,8 +48,9 @@
 			<section class="products flex">
 				<span>>_Tops/Kirby T-Shirt</span>
 				<img src="img/FRONT1-Black.jpg" alt="">
-				<form onsubmit="addToCart('1234')">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
+				<form onsubmit="addToCart(1234)" enctype="multipart/form-data">
+					<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
+					<label for="size"></label>
 					<select name="size" id="size" required>
 						<option value="">None</option>
 						<option value="small">Small</option>
@@ -62,10 +63,10 @@
 
 		<div class="flex">
 			<section class="products flex">
-				<span>>_Tops/Mario T-Shirt</span>
+				<span id="name">>_Tops/Mario T-Shirt</span>
 				<img src="img/FRONT2-Black.jpg" alt="">
-				<form action="/cart/addProduct/?_method=PUT">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
+				<form action="/cart/addProduct" method="POST">
+					<button type="submit" class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
 					<select name="size" id="size" required>
 						<option value="">None</option>
 						<option value="small">Small</option>

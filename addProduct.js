@@ -7,7 +7,7 @@ const clientPromise = connectDB();
 async function run() {
     await clientPromise
     const product = new Product({
-        name: "Kirby T-Shirt",
+        name: ">_Tops/Kirby T-Shirt",
 
         image: "https://res.cloudinary.com/dtyc44fjq/image/upload/v1668981945/Clothing%20Store/FRONT1-Black_fpedxk.jpg",
 
