@@ -7,16 +7,15 @@ module.exports = {
     getCart: (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
         //Test for now
-        res.json(cart)
-        // res.json(req.User.cart)
+        console.log(`Here is your cart`)
+        console.log(req.user)
+        res.json(req.user.shoppingCart)
     },
 
     addProduct: async (req, res) => {
         //Grabbing the item's ID by request and incrementing the user's count by 1
-        // cart.push(req.params.id)
-        // res.json(cart)
-        cart.push(req.body.size)
-        console.log(cart)
+        req.user.shoppingCart.set('product', '1')
+        console.log(req.user.shoppingCart.get('product'))
         res.redirect(req.get('referer'));
     },
 

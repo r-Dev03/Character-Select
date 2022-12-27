@@ -48,7 +48,7 @@
 			<section class="products flex">
 				<span>>_Tops/Kirby T-Shirt</span>
 				<img src="img/FRONT1-Black.jpg" alt="">
-				<form onsubmit="addToCart(1234)" enctype="multipart/form-data">
+				<form action="/cart/addProduct" method="POST">
 					<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
 					<label for="size"></label>
 					<select name="size" id="size" required>
