@@ -1,7 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const checkout = require("../models/Product")
 const User = require("../models/User");
-let cart = []
 
 module.exports = {
     getCart: (req, res) => {
@@ -16,6 +15,7 @@ module.exports = {
         //Grabbing the item's ID by request and incrementing the user's count by 1
         req.user.shoppingCart.set('product', '1')
         console.log(req.user.shoppingCart.get('product'))
+        console.log(req.body)
         res.redirect(req.get('referer'));
     },
 
