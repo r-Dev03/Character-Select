@@ -13,8 +13,7 @@ module.exports = {
 
     addProduct: async (req, res) => {
         //Grabbing the item's ID by request and incrementing the user's count by 1
-        req.user.shoppingCart.set('product', '1')
-        console.log(req.user.shoppingCart.get('product'))
+        req.user.shoppingCart.push(req.body.size)
         console.log(req.body)
         res.redirect(req.get('referer'));
     },
