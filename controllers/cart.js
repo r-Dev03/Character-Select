@@ -10,17 +10,17 @@ module.exports = {
         //Retrieving the items in user's cart by ID and loading them
         //Test for now
         // console.log(req.user)
-        res.json(req.user.shoppingCart)
+        res.json("got cart")
     },
 
     addProduct: async (req, res) => {
         //Grabbing the item's ID by request and incrementing the user's count by 1
-        const ownsProdcut = req.user.shoppingCart.some(product => {
-            product.ObjectId == ''
-        })
+        function ownsProduct(){ 
+            return req.user.shoppingCart.some
+            (product => { product.ObjectId == ""}
+            )}
 
-        const currentProduct = Product.find(
-            {name : `${req.body.name}`}, {size : `${req.body.size}`}).lean()
+            const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
             console.log(currentProduct)
         req.user.shoppingCart.push({
             id: new ObjectId('63ad232679ffa233cec0298d'),
