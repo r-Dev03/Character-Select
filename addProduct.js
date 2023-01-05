@@ -13,7 +13,7 @@ async function run() {
 
         cloudinaryId: "v1668981945",
 
-        size: "Large",
+        size: "small",
 
         price: 10,
     })

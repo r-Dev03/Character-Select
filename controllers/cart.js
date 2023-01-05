@@ -21,6 +21,8 @@ module.exports = {
             )}
 
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
+            console.log(req.body.name)
+            console.log(req.body.size)
             console.log(currentProduct)
         req.user.shoppingCart.push({
             id: new ObjectId('63ad232679ffa233cec0298d'),
