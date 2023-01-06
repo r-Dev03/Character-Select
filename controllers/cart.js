@@ -21,6 +21,8 @@ module.exports = {
             //Iterating through user shopping cart to find a matching Product ID
             if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
                 console.log("Added 1")
+                const foundProduct = req.user.shoppingCart.find(el => el.id === currentProduct.id)
+                console.log(foundProduct)
             //if current product does not exist in user shopping cart add it on
             } else {
                 req.user.shoppingCart.push({
