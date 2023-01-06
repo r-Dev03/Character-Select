@@ -15,20 +15,21 @@ module.exports = {
 
     addProduct: async (req, res) => {
         //Grabbing the item's ID by request and incrementing the user's count by 1
-        function ownsProduct(){ 
-            return req.user.shoppingCart.some
-            (product => { product.ObjectId == ""}
-            )}
-
+   
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
-            console.log(req.body.name)
-            console.log(req.body.size)
-            console.log(currentProduct)
-        req.user.shoppingCart.push({
-            id: new ObjectId('63ad232679ffa233cec0298d'),
-            quantity: 1,
-          });
-          await req.user.save()
+
+            //Iterating through user shopping cart to find a matching Product ID
+            if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
+                console.log("Added 1")
+            //if current product does not exist in user shopping cart add it on
+            } else {
+                req.user.shoppingCart.push({
+                    id: new ObjectId(currentProduct.id),
+                    quantity: 1,
+                });
+                await req.user.save()
+            }
+
         // console.log(req.body)
         res.redirect(req.get('referer'));
     },
