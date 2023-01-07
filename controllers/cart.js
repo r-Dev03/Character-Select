@@ -18,10 +18,19 @@ module.exports = {
 
             //Iterating through user shopping cart to find a matching Product ID
             if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
-                console.log("Added 1")
                 //Iterating through User's Shopping Cart to verify if currently selected item already exists, if so increment the quantity property by 1
-                const foundProduct = req.user.shoppingCart.find(el => el.id === currentProduct.id)
-                console.log(foundProduct)
+                // const foundProduct = req.user.shoppingCart.findIndex(el => el.id === currentProduct.id)
+                try {
+                    await User.findOneAndUpdate(
+                      { _id: req.user.id },
+                      {
+                        $inc: { quantity: 1 },
+                      }
+                    );
+                    console.log("Quantity +1");
+                  } catch (err) {
+                    console.log(err);
+                  }
             //if current product does not exist in user shopping cart add it on
             } else {
                 req.user.shoppingCart.push({
