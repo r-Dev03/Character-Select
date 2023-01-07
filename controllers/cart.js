@@ -9,18 +9,17 @@ module.exports = {
     getCart: (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
         //Test for now
-        // console.log(req.user)
         res.json("got cart")
     },
 
     addProduct: async (req, res) => {
-        //Grabbing the item's ID by request and incrementing the user's count by 1
-   
+            //Using request body to locate a matching product in the Product Collection
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
 
             //Iterating through user shopping cart to find a matching Product ID
             if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
                 console.log("Added 1")
+                //Iterating through User's Shopping Cart to verify if currently selected item already exists, if so increment the quantity property by 1
                 const foundProduct = req.user.shoppingCart.find(el => el.id === currentProduct.id)
                 console.log(foundProduct)
             //if current product does not exist in user shopping cart add it on
