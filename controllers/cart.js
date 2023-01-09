@@ -21,12 +21,10 @@ module.exports = {
                 //Iterating through User's Shopping Cart to verify if currently selected item already exists, if so increment the quantity property by 1
                 // const foundProduct = req.user.shoppingCart.findIndex(el => el.id === currentProduct.id)
                 try {
-                    await User.findOneAndUpdate(
-                      { _id: req.user.id },
-                      {
-                        $inc: { quantity: 1 },
-                      }
-                    );
+                  await User.findOneAndUpdate(
+                    { shoppingCart: { '$elemMatch': { id: currentProduct.id } } },
+                    {'$inc': { quantity: 1 }},
+                  );
                     console.log("Quantity +1");
                   } catch (err) {
                     console.log(err);
