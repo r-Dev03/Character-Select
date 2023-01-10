@@ -22,8 +22,8 @@ module.exports = {
                 // const foundProduct = req.user.shoppingCart.findIndex(el => el.id === currentProduct.id)
                 try {
                   await User.findOneAndUpdate(
-                    { shoppingCart: { '$elemMatch': { id: currentProduct.id } } },
-                    {'$inc': { quantity: 1 }},
+                    { _id: req.user._id, shoppingCart: { '$elemMatch': { id: currentProduct.id } } },
+                    {'$inc': { 'shoppingCart.$.quantity': 1 }},
                   );
                     console.log("Quantity +1");
                   } catch (err) {
