@@ -7,13 +7,13 @@ const clientPromise = connectDB();
 async function run() {
     await clientPromise
     const product = new Product({
-        name: ">_Tops/Kirby T-Shirt",
+        name: ">_Tops/Link T-Shirt",
 
-        image: "https://res.cloudinary.com/dtyc44fjq/image/upload/v1668981945/Clothing%20Store/FRONT1-Black_fpedxk.jpg",
+        image: "https://res.cloudinary.com/dtyc44fjq/image/upload/v1668982102/Clothing%20Store/FRONT6-Black_boiabd.jpg",
 
-        cloudinaryId: "v1668981945",
+        cloudinaryId: "v1668982102",
 
-        size: "small",
+        size: "large",
 
         price: 10,
     })

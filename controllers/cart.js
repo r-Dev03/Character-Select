@@ -43,6 +43,7 @@ module.exports = {
     },
 
     deleteProduct: async (req, res) => {
-        //Grabbing the item's ID and matching that one from the user's cart and deducting the count by 1
+        //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1
+        
     }
 }
