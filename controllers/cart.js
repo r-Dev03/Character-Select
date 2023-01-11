@@ -9,6 +9,10 @@ module.exports = {
     getCart: (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
         //Test for now
+        const userCart = User.find({ _id : req.user._id})
+        let productIDs = []
+        
+        console.log(userCart)
         res.json("got cart")
     },
 

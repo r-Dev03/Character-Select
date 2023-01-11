@@ -33,11 +33,11 @@ async function initCart() {
   console.log(data)
 }
 
-async function addToCart(id) {
-  const res = await fetch(`/cart/add/${id}`, {method:"POST"})
-  const data = await res.json()
-  console.log(data)
-  console.log(id)
-}
+// async function addToCart(id) {
+//   const res = await fetch(`/cart/add/${id}`, {method:"POST"})
+//   const data = await res.json()
+//   console.log(data)
+//   console.log(id)
+// }
 
 initCart();
