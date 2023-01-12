@@ -6,13 +6,10 @@ const { ObjectId } = require("mongodb");
 const Product = require("../models/Product");
 
 module.exports = {
-    getCart: (req, res) => {
+    getCart: async (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
-        //Test for now
-        const userCart = User.find({ _id : req.user._id})
-        let productIDs = []
-        
-        console.log(userCart)
+        let productIDs = Product.find({'_id': '$in' [req.user.shoppingCart]})
+        console.log(productIDs)
         res.json("got cart")
     },
 
