@@ -8,8 +8,15 @@ const Product = require("../models/Product");
 module.exports = {
     getCart: async (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
-        let productIDs = Product.find({'_id': '$in' [req.user.shoppingCart]})
-        console.log(productIDs)
+        //Ideally would want to find products based on matching the product id's that exist in the user cart to retreive proper information for each product. I.E images
+        // let userCart = []
+        // req.user.shoppingCart.forEach(el => {userCart.push(el.id)})
+        let userCart = new Map();
+        req.user.shoppingCart.forEach(el => {userCart.set(el.id, el.quantity)})
+        let products = await Product.find({'_id': {$in: [...userCart.keys()]}});
+        console.log(userCart)
+        console.log('--------------------------')
+        console.log(products)
         res.json("got cart")
     },
 
@@ -44,7 +51,7 @@ module.exports = {
     },
 
     deleteProduct: async (req, res) => {
-        //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1
+        //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1 - if quantity reaches 0 remove product entirely
         
     }
 }
