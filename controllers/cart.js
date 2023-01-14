@@ -9,15 +9,13 @@ module.exports = {
     getCart: async (req, res) => {
         //Retrieving the items in user's cart by ID and loading them
         //Ideally would want to find products based on matching the product id's that exist in the user cart to retreive proper information for each product. I.E images
-        // let userCart = []
-        // req.user.shoppingCart.forEach(el => {userCart.push(el.id)})
         let userCart = new Map();
         req.user.shoppingCart.forEach(el => {userCart.set(el.id, el.quantity)})
         let products = await Product.find({'_id': {$in: [...userCart.keys()]}});
         console.log(userCart)
         console.log('--------------------------')
         console.log(products)
-        res.json("got cart")
+        res.json('got it!')
     },
 
     addProduct: async (req, res) => {
