@@ -9,7 +9,8 @@ const CartSchema = new mongoose.Schema( {
       {
         id: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Product"
+          ref: "Product",
+          require: true,
         },
         name: {
             type: String,
@@ -25,8 +26,14 @@ const CartSchema = new mongoose.Schema( {
           },
       }
     ],
-    createdAt: Date.now(),
-    updatedAt: Date.now()
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now,
+    },
   })
 
   module.exports = mongoose.model("Cart", CartSchema);
