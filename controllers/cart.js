@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const User = require("../models/User");
 const { ObjectId } = require("mongodb");
 const Product = require("../models/Product");
+const Cart = require("../models/Cart");
 
 module.exports = {
     getCart: async (req, res) => {
@@ -21,6 +22,7 @@ module.exports = {
     addProduct: async (req, res) => {
             //Using request body to locate a matching product in the Product Collection
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
+            // const userCart = await Cart.findById(req.user.id)
 
             //Iterating through user shopping cart to find a matching Product ID
             if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
