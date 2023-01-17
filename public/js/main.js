@@ -25,13 +25,13 @@ cart.addEventListener('click', () => {
   menu.classList.toggle('is-active') 
 })
 
-//Shoppping Cart Functionality 
+// //Shoppping Cart Functionality 
 
-async function initCart() {
-  const res = await fetch("/cart")
-  const data = await res.json()
-  console.log(data)
-}
+// async function initCart() {
+//   const res = await fetch("/cart")
+//   const data = await res.json()
+//   console.log(data)
+// }
 
 // async function addToCart(id) {
 //   const res = await fetch(`/cart/add/${id}`, {method:"POST"})
@@ -40,4 +40,4 @@ async function initCart() {
 //   console.log(id)
 // }
 
-initCart();
+// initCart();

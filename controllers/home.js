@@ -1,9 +1,20 @@
-const userCart = require('./cart')
-const products = require('./cart')
-const getCart = require('./cart')
+const { get } = require('mongoose');
+const { getCart } = require('./cart')
+const User = require("../models/User");
 
 module.exports = {
   getIndex: async (req, res) => {
-    res.render("index.ejs", {user: req.user, products: products, userCart: userCart});
+    console.log(req.user)
+    console.log(getCart)
+    if(req.user) {
+      const cart = await getCart(req.user._id)
+      console.log(cart.items)
+      res.render("index.ejs", {user: req.user, userCart: cart.items});
+    } else {
+      res.render("index.ejs")
+    }
+    
+ 
+
   },
 };

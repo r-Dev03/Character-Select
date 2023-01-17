@@ -36,14 +36,19 @@
 		</section>
 
 		<nav class="mini-cart">
-			<table>
-				<% for(var i=0; i < products.length; i++) { %>
-				   <tr>
-					 <td><%= products[i].id %></td>
-					 <td><%= products[i].name %></td>
-				   </tr>
+			<ul>
+				<% if(userCart[0]) { %>
+					<% userCart.forEach(el => { %>
+						<li>
+						 <span><%= el.name %></span>
+						 <span>$10.00</span>
+						 <span>x<%= el.qty %></span>
+						</li>
+					<%})%>
+					<%} else {%>
+					 <li><h1>So much empty lol</h1></li>
 				<% } %>
-				</table>
+			</ul>
 			<!-- <ul>
 				<li>
 					<span>Item 1</span>
