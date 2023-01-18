@@ -45,7 +45,7 @@ module.exports = {
             //Using request body to locate a matching product in the Product Collection
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
             const cart = await Cart.findOneAndUpdate({userId : req.user.id}, 
-              {$push: { items: {id: currentProduct.id, name: currentProduct.name, img: currentProduct.image, qty: {}} }})
+              {$push: { items: {id: currentProduct.id, name: currentProduct.name, img: currentProduct.image, qty: 1} }})
             // let foundProduct = userCart.find(el => el.id == currentProduct.id)
 
             //Iterating through user shopping cart to find a matching Product ID

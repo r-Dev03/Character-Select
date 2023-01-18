@@ -11,7 +11,7 @@ module.exports = {
       console.log(cart.items)
       res.render("index.ejs", {user: req.user, userCart: cart.items});
     } else {
-      res.render("index.ejs")
+      res.render("index.ejs", {user: "Guest", userCaart: []})
     }
     
  
