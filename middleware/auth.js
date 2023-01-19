@@ -4,9 +4,13 @@ module.exports = {
       return next();
     } else {
       // res.redirect("/");
-      res.render("index.ejs")
+      res.render("index.ejs", {
+            user:{name: "Anonymous"}, 
+            userCart:[{name: "No items in cart..."}]
+      })
     }
   },
+
   ensureGuest: function (req, res, next) {
     if (!req.isAuthenticated()) {
       return next();
