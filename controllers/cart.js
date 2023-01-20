@@ -46,11 +46,16 @@ module.exports = {
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
             const cart = await Cart.findOne({userId: req.user.id})
             console.log(cart)
-            if(cart.items.filter(e => e.id == currentProduct.id).length > 0) {
-              console.log("you already got this item")
-            } else {
-              await Cart.findOneAndUpdate({userId : req.user.id}, 
-                {$push: { items: {id: currentProduct.id, name: currentProduct.name, img: currentProduct.image, qty: 1}}})
+            try {  
+              if(cart.items.some(e => e.id == currentProduct.id)) {
+                console.log("you already got this item")
+                } else {
+                  await Cart.findOneAndUpdate({userId : req.user.id}, 
+                  {$push: { items: {id: currentProduct.id, name: currentProduct.name, size : currentProduct.size, img: currentProduct.image, qty: 1}}})
+            }
+          } 
+            catch(err) {
+              console.log(err)
             }
             // const cart = await Cart.findOneAndUpdate({userId : req.user.id}, 
             //   {$push: { items: {id: currentProduct.id, name: currentProduct.name, img: currentProduct.image, qty: 1} }})

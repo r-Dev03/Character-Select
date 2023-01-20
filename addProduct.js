@@ -15,6 +15,8 @@ async function run() {
 
         size: "large",
 
+        category: "Tops",
+
         price: 10,
     })
     await product.save()

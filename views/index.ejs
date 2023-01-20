@@ -41,7 +41,7 @@
 					<% userCart.forEach(el => { %>
 						<li>
 						 <span><%= el.name %></span>
-						 <span><%= el.qty %></span>
+						 <span>x<%= el.qty %></span>
 						</li>
 					<%})%>
 					<%} else {%>

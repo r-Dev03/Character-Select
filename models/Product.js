@@ -9,6 +9,10 @@ const ProductSchema = new mongoose.Schema({
       type: String,
       require: true,
     },
+    category: {
+      type: String, 
+      require: true,
+    },
     cloudinaryId: {
       type: String,
       require: true,
