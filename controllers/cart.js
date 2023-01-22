@@ -48,6 +48,9 @@ module.exports = {
             console.log(cart)
             try {  
               if(cart.items.some(e => e.id == currentProduct.id)) {
+                await Cart.findOneAndUpdate(
+                {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
+                {'$inc': { 'items.$.qty': 1 }})
                 console.log("you already got this item")
                 } else {
                   await Cart.findOneAndUpdate({userId : req.user.id}, 
