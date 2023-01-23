@@ -46,22 +46,28 @@
 	</nav>
 
     <!--Tops-->
-	<!-- <% tops.forEach(el => { %>
-		 <span><%= el.name %></span>
-		 <img src="<%= el.img %>" alt="">
-		 <form action="/cart/addProduct" method="POST">
-			<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
-			<select name="size" id="size" required>
-				<option value="">None</option>
-				<option value="small">Small</option>
-				<option value="medium">Medium</option>
-				<option value="large">Large</option>
-			</select>
-		</form>
-		</li>
-	<%})%> -->
+	<section class=" container grid">
+		<% tops.forEach(el => { %>
+			<div class="flex">
+				<section class="products flex">
+			 		<span><%= el.name %></span>
+		 			<img src="<%= el.image %>" alt="">
+		 			<form action="/cart/addProduct" method="POST">
+					<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
+					<input type="hidden" name="name" value="<%= el.name %>">
+					<select name="size" id="size" required>
+						<option value="">None</option>
+						<option value="small">Small</option>
+						<option value="medium">Medium</option>
+						<option value="large">Large</option>
+					</select>
+				</form>
+			  </section>
+			</div>
+			<%})%>
+	</section>
 
-    <section class=" container grid">
+    <!-- <section class=" container grid">
         <div class="flex">
 			<section class="products flex">
 				<span>>_Tops/Kirby T-Shirt</span>
@@ -164,7 +170,7 @@
 			</section>
 		</div>
      
-    </section>
+    </section> -->
 	<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
