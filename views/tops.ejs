@@ -35,6 +35,7 @@
 				<% userCart.forEach(el => { %>
 					<li>
 					 <span><%= el.name %></span>
+					 <img src="<%= el.image %>" alt="">
 					 <span>x<%= el.qty %></span>
 					</li>
 				<%})%>
