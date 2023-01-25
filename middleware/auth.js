@@ -6,7 +6,7 @@ module.exports = {
       // res.redirect("/");
       res.render("index.ejs", {
             user:{name: "Anonymous"}, 
-            userCart:[{name: "No items in cart..."}]
+            userCart:[]
       })
     }
   },

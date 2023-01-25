@@ -31,14 +31,19 @@
 
 		<nav class="mini-cart">
 			<ul>
-				<li><span>Item 1</span></li>
-				<li><span>Item 2</span></li>
-				<li><span>Item 3</span></li>
-				<li><span>Item 4</span></li>
-				<li><span>Item 5</span></li>
-				<li><span>Item 6</span></li>
+				<% if(userCart[0]) { %>
+					<% userCart.forEach(el => { %>
+						<li>
+						 <img src="<%= el.img %>" alt="">
+						 <span><%= el.name %></span>
+						 <span>x<%= el.qty %></span>
+						</li>
+					<%})%>
+					<%} else {%>
+					 <li><span>No Armor Equipped...</span></li>
+				<% } %>
 			</ul>
-			<div class = "flex"><a href="#"><button class="btn btn-pushable btn-pushable--black">Proceed To Checkout</button></a></div>
+			<div class = "flex"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Proceed To Checkout</button></a></div>
 		</nav>
 
 		<!--Selections-->

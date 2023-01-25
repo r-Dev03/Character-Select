@@ -31,14 +31,6 @@ module.exports = {
         catch (err) {
           console.log(err)
         }
-        //----------------------------------------------------------------------
-        // let userCart = new Map();
-        // req.user.shoppingCart.forEach(el => {userCart.set(el.id, el.quantity)})
-        // let products = await Product.find({'_id': {$in: [...userCart.keys()]}});
-        // console.log(userCart)
-        // console.log('--------------------------')
-        // console.log(products)
-        // res.json('got it!')
     },
 
     addProduct: async (req, res) => {

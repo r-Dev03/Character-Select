@@ -11,7 +11,7 @@ module.exports = {
         const cart = await getCart(req.user._id)
         res.render('tops.ejs', {user: req.user, userCart: cart.items, tops: tops});
       }else{
-        res.render('tops.ejs', {user: {name: 'Anonymous'}, userCart:[{name: "No items in cart..."}], tops: tops});
+        res.render('tops.ejs', {user: {name: 'Anonymous'}, userCart:[], tops: tops});
       }
     }    
     catch(err){

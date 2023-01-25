@@ -34,13 +34,13 @@
 			<% if(userCart[0]) { %>
 				<% userCart.forEach(el => { %>
 					<li>
+					 <img src="<%= el.img %>" alt="">
 					 <span><%= el.name %></span>
-					 <img src="<%= el.image %>" alt="">
 					 <span>x<%= el.qty %></span>
 					</li>
 				<%})%>
 				<%} else {%>
-				 <li><h1>So much empty lol</h1></li>
+				 <li><span>No Armor Equipped...</span></li>
 			<% } %>
 		</ul>
 		<div class = "flex"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Proceed To Checkout</button></a></div>
