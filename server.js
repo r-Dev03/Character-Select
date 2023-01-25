@@ -15,6 +15,7 @@ const bottomRoutes = require("./routes/bottoms")
 const supportRoutes = require("./routes/support")
 const checkoutRoutes = require("./routes/checkout")
 const cartRoutes = require("./routes/cart")
+const productRoutes = require("./routes/product")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -66,6 +67,7 @@ app.use("/bottoms", bottomRoutes)
 app.use("/support", supportRoutes)
 app.use("/checkout", checkoutRoutes)
 app.use("/cart", cartRoutes)
+app.use("/product", productRoutes)
 
 //Server Running
 app.listen(process.env.PORT, () => {

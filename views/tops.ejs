@@ -52,7 +52,7 @@
 			<div class="flex">
 				<section class="products flex">
 			 		<span><%= el.name %></span>
-		 			<img src="<%= el.image %>" alt="">
+		 			<a href="/product"><img src="<%= el.image %>" alt=""></a>
 		 			<form action="/cart/addProduct" method="POST">
 					<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
 					<input type="hidden" name="name" value="<%= el.name %>">
