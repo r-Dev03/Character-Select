@@ -39,13 +39,14 @@
 			<ul>
 				<% if(userCart[0]) { %>
 					<% userCart.forEach(el => { %>
-						<li class="grid">
+						<li class="item">
+						 <img src="<%= el.img %>" alt="">
 						 <span><%= el.name %></span>
 						 <span>x<%= el.qty %></span>
 						</li>
 					<%})%>
 					<%} else {%>
-					 <li><span>No Armor Equipped...</span></li>
+					 <li class="item"><span>No Armor Equipped...</span></li>
 				<% } %>
 			</ul>
 			<!-- <ul>

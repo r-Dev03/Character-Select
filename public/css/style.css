@@ -223,11 +223,12 @@ footer {
      left: 0;
 }
 
+
 .mini-cart ul li  {
      display: block;
      text-align: center;
      width: 100%;
-     max-width: 300px;
+     max-width: 400px;
      margin: 0 auto 16px;
      padding: 12px 16px;
      border: solid 2px black; 
@@ -247,6 +248,7 @@ footer {
      justify-content: space-between;
      align-items: center;
 }
+
 
 .mini-cart .flex {
   align-items: center;

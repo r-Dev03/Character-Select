@@ -36,6 +36,7 @@ module.exports = {
     addProduct: async (req, res) => {
             //Using request body to locate a matching product in the Product Collection
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
+            console.log(currentProduct)
             const cart = await Cart.findOne({userId: req.user.id})
             console.log(cart)
             try {  
