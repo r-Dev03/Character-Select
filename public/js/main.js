@@ -25,19 +25,28 @@ cart.addEventListener('click', () => {
   menu.classList.toggle('is-active') 
 })
 
-// //Shoppping Cart Functionality 
+//Delete Fucntion
 
-// async function initCart() {
-//   const res = await fetch("/cart")
-//   const data = await res.json()
-//   console.log(data)
-// }
+const deleteBtn = document.querySelectorAll('.del')
 
-// async function addToCart(id) {
-//   const res = await fetch(`/cart/add/${id}`, {method:"POST"})
-//   const data = await res.json()
-//   console.log(data)
-//   console.log(id)
-// }
+Array.from(deleteBtn).forEach((el)=>{
+  el.addEventListener('click', deleteProduct)
+})
 
-// initCart();
+async function deleteProduct(){
+  const productId = this.parentNode.dataset.id
+  try{
+      const response = await fetch('cart/deleteProduct', {
+          method: 'delete',
+          headers: {'Content-type': 'application/json'},
+          body: JSON.stringify({
+              'productIdFromJSFile': productId
+          })
+      })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+  }catch(err){
+      console.log(err)
+  }
+}

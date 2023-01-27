@@ -36,7 +36,6 @@ module.exports = {
     addProduct: async (req, res) => {
             //Using request body to locate a matching product in the Product Collection
             const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
-            console.log(currentProduct)
             const cart = await Cart.findOne({userId: req.user.id})
             console.log(cart)
             try {  
@@ -86,6 +85,8 @@ module.exports = {
     },
 
     deleteProduct: async (req, res) => {
+      console.log("Test")
+      res.json("Deleted")
         //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1 - if quantity reaches 0 remove product entirely
         // const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
         // const cart = await Cart.findOne({userId: req.user.id})
