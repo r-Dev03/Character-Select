@@ -35,6 +35,7 @@ Array.from(deleteBtn).forEach((el)=>{
 
 async function deleteProduct(){
   const productId = this.parentNode.dataset.id
+  console.log(productId)
   try{
       const response = await fetch('cart/deleteProduct', {
           method: 'delete',

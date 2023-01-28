@@ -13,7 +13,7 @@ module.exports = {
         try {
           const userCart = await Cart.findOne({userId : user})
           if(userCart) {
-            console.log(userCart)
+            // console.log(userCart)
             return userCart
           } else {
             console.log("could not retrieve cart")
@@ -85,21 +85,19 @@ module.exports = {
     },
 
     deleteProduct: async (req, res) => {
-      console.log("Test")
-      res.json("Deleted")
         //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1 - if quantity reaches 0 remove product entirely
-        // const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
-        // const cart = await Cart.findOne({userId: req.user.id})
-        // console.log(cart)
+        const currentProduct = await Product.findOne({_id: req.body.productIdFromJSFile})
+        console.log(currentProduct)
+        // res.json("yes")
         // try {
-        //     const productToDelete = await Cart.findOne({userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}})
-        //     console.log(productToDelete)
-        //     await Cart.findOneAndUpdate(
-        //     {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
-        //     {'$inc': { 'items.$.qty': -1 }})
-        //     console.log("you already got this item")
-        //     } 
-
+        //     // const productToDelete = await Cart.findOne({userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}})
+        //     // console.log(productToDelete)
+        //     //     await Cart.findOneAndUpdate(
+        //     //       {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
+        //     //       {'$inc': { 'items.$.qty': -1 }})
+        //           console.log("Decreasing the quantity by -1")
+        //     }
+           
         // catch(err) {
         //   console.log(err)
         // }
