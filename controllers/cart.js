@@ -86,20 +86,20 @@ module.exports = {
 
     deleteProduct: async (req, res) => {
         //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1 - if quantity reaches 0 remove product entirely
-        const currentProduct = await Product.findOne({_id: req.body.productIdFromJSFile})
-        console.log(currentProduct)
+        const currentProducts = await Product.findOne({_id: req.body.productIdFromJSFile})
+        console.log(currentProducts)
         // res.json("yes")
-        // try {
-        //     // const productToDelete = await Cart.findOne({userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}})
-        //     // console.log(productToDelete)
-        //     //     await Cart.findOneAndUpdate(
-        //     //       {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
-        //     //       {'$inc': { 'items.$.qty': -1 }})
-        //           console.log("Decreasing the quantity by -1")
-        //     }
+        try {
+            const productToDelete = await Cart.findOne({userId: req.user.id, items: {'$elemMatch': { id: currentProducts.id}}})
+            console.log(productToDelete)
+                // await Cart.findOneAndUpdate(
+                //   {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
+                //   {'$inc': { 'items.$.qty': -1 }})
+                //   console.log("Decreasing the quantity by -1")
+            }
            
-        // catch(err) {
-        //   console.log(err)
-        // }
+        catch(err) {
+          console.log(err)
+        }
     }
 }
