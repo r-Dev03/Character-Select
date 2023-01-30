@@ -5,6 +5,7 @@ const User = require("../models/User");
 const { ObjectId } = require("mongodb");
 const Product = require("../models/Product");
 const Cart = require("../models/Cart");
+const { rawListeners } = require("../models/Product");
 
 module.exports = {
     getCart: async (user) => {
@@ -86,20 +87,24 @@ module.exports = {
 
     deleteProduct: async (req, res) => {
         //Grabbing the item's ID and matching that one from the user's cart and deducting the quanitity by 1 - if quantity reaches 0 remove product entirely
-        const currentProducts = await Product.findOne({_id: req.body.productIdFromJSFile})
-        console.log(currentProducts)
-        // res.json("yes")
         try {
-            const productToDelete = await Cart.findOne({userId: req.user.id, items: {'$elemMatch': { id: currentProducts.id}}})
-            console.log(productToDelete)
-                // await Cart.findOneAndUpdate(
-                //   {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
-                //   {'$inc': { 'items.$.qty': -1 }})
-                //   console.log("Decreasing the quantity by -1")
+          const prod = await Cart.findOne({userId: req.user.id})
+          const item = prod.items.find(el => el.id == req.body.productIdFromJSFile)
+          console.log(item)
+          if (item.qty == 1) {
+            const newItems = prod.items.filter(el => el.id != item.id)
+            await Cart.findOneAndUpdate({userId: req.user.id}, {items: newItems})
+          } else {
+            await Cart.findOneAndUpdate(
+              {userId: req.user.id, items: {'$elemMatch': { id: req.body.productIdFromJSFile}}},
+              {'$inc': { 'items.$.qty': -1 }})
+              console.log("Decreasing the quantity by -1")
+          }
             }
            
         catch(err) {
           console.log(err)
         }
+        res.json('Winner')
     }
 }
