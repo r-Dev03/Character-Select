@@ -312,6 +312,11 @@ footer {
      height: 50%;
      box-shadow: 10px 10px 1px;
 }
+/* 
+.select div:hover {
+     transition: 0.5s ease;
+     box-shadow: none;
+} */
 
 .select .flex {
      flex-direction: column;

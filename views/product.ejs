@@ -1,1 +1,54 @@
-<h1>Product Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Clothing Store</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/loader.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+
+    <section class="navbar">
+        <div class="container flex">
+            <h1 class="logo">Character Select</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="support">Support</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping" id="cart"></i></a></li>
+                    <li><a href="signup"><i class="fa-regular fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <nav class="mini-cart">
+        <ul>
+            <% if(userCart[0]) { %>
+                <% userCart.forEach(el => { %>
+                    <li class="item" data-id="<%= el.id %>">
+                     <img src="<%= el.img %>" alt="">
+                     <span><%= el.name %></span>
+                     <span><%= el.size %> -></span>
+                     <span>x<%= el.qty %></span>
+                     <a href="#" class="del"><i class="fa-solid fa-square-minus"></i></a>
+                    </li>
+                <%})%>
+                <%} else {%>
+                 <li><span>No Armor Equipped...</span></li>
+            <% } %>
+        </ul>
+        <div class = "flex"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Proceed To Checkout</button></a></div>
+    </nav>
+
+    <h1>Product Page</h1>
+
+    
+	<body>

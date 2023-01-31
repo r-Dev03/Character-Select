@@ -33,16 +33,16 @@
 		<ul>
 			<% if(userCart[0]) { %>
 				<% userCart.forEach(el => { %>
-					<li class="item">
+					<li class="item" data-id="<%= el.id %>">
 					 <img src="<%= el.img %>" alt="">
 					 <span><%= el.name %></span>
 					 <span><%= el.size %> -></span>
 					 <span>x<%= el.qty %></span>
-					 <a href=""><i class="fa-solid fa-square-minus"></i></a>
+					 <a href="#" class="del"><i class="fa-solid fa-square-minus"></i></a>
 					</li>
 				<%})%>
 				<%} else {%>
-				 <li class="item"><span>No Armor Equipped...</span></li>
+				 <li><span>No Armor Equipped...</span></li>
 			<% } %>
 		</ul>
 		<div class = "flex"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Proceed To Checkout</button></a></div>
