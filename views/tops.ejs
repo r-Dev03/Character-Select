@@ -56,7 +56,7 @@
 			 		<span><%= el.name %></span>
 		 			<a href="/product"><img src="<%= el.image %>" alt=""></a>
 		 			<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black" type="submit"> Add To Cart </button>
+					<button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct" type="submit"> Add To Cart </button>
 					<input type="hidden" name="name" value="<%= el.name %>">
 					<select name="size" id="size" required>
 						<option value="">None</option>
@@ -70,6 +70,10 @@
 			<%})%>
 	</section>
 
+<div class="alert-success">
+	<img src="img/coin.gif" alt="">
+	<h3>Added to cart successfully!</h3>
+</div>
     <!-- <section class=" container grid">
         <div class="flex">
 			<section class="products flex">

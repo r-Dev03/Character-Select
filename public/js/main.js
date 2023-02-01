@@ -51,3 +51,20 @@ async function deleteProduct(){
       console.log(err)
   }
 }
+
+//ADD Alert
+
+const addBtn = document.querySelectorAll('.add')
+const alertSuccess = document.querySelector('.alert-success')
+
+Array.from(addBtn).forEach((el)=>{
+  el.addEventListener('click', addAlert)
+})
+
+function addAlert() {
+  alertSuccess.classList.toggle('hidden')
+}
+
+
+
+

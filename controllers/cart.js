@@ -81,8 +81,11 @@ module.exports = {
             //     await req.user.save()
             // }
 
-        // console.log(req.body)
-        res.redirect(req.get('referer'));
+        // console.log(req.body
+        setTimeout(function () {
+          res.redirect(req.get('referer'));
+        }, 2000);
+        // res.redirect(req.get('referer'));
     },
 
     deleteProduct: async (req, res) => {

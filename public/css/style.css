@@ -312,9 +312,9 @@ footer {
      height: 50%;
      box-shadow: 10px 10px 1px;
 }
-/* 
-.select div:hover {
-     transition: 0.5s ease;
+
+/* .select div:hover {
+     transition: all 0.5s ease-in 0.2s;
      box-shadow: none;
 } */
 
@@ -369,4 +369,32 @@ footer {
 /*******************************************/
 .flex.support {
      text-align: center;
+}
+
+
+/******************************************
+/* Alert Box
+/*******************************************/
+
+
+.alert-success {
+     display: flex;
+     position: fixed;
+     top: 6%;
+     right: 100%;
+     text-align: center;
+     width: 100%;
+     max-width: 350px;
+     margin: 0 auto 16px;
+     padding: 12px 16px;
+     background-color: white;
+     color: black;
+     border: solid 5px #1b1e23;
+     border-radius: 5%;
+     transition: 0.2s;
+    
+}
+
+.hidden {
+     right: 78%;
 }
