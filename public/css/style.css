@@ -398,3 +398,22 @@ footer {
 .hidden {
      right: 78%;
 }
+
+/******************************************
+/* Responsive Design
+/*******************************************/
+
+@media (max-width: 980px) {
+     .flex.categories {
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .select {
+          height: 900px;
+     }
+
+     .select div {
+          width: 50%;
+     }
+   }
