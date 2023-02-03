@@ -54,14 +54,14 @@ async function deleteProduct(){
 
 //ADD Alert
 
-const addBtn = document.querySelectorAll('.add')
+const addBtn = document.querySelectorAll('.addProduct')
 const alertSuccess = document.querySelector('.alert-success')
 
 Array.from(addBtn).forEach((el)=>{
   el.addEventListener('click', addAlert)
 })
 
-function addAlert() {
+function addAlert(e) {
   alertSuccess.classList.toggle('hidden')
 }
 
