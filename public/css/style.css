@@ -406,9 +406,11 @@ footer {
 @media (max-width: 980px) {
      .flex.categories {
           flex-direction: column;
-          align-items: center;
+          gap: 40px;
+          margin-top: 50px;
+          
      }
-
+     
      .select {
           height: 900px;
      }
@@ -416,4 +418,5 @@ footer {
      .select div {
           width: 50%;
      }
+
    }
