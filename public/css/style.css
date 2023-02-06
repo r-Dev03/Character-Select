@@ -87,7 +87,16 @@ footer {
     
    .btn:hover .btn-slide-show-text1 {
      margin-left: 65px;
-   } 
+   }
+
+   .enable-scroll {
+     overflow-y: scroll;
+     inset: 0;
+   }
+
+   .disable-scroll {
+     overflow: hidden;
+   }
     
    .btn-pushable {
      padding: 15px;
@@ -256,10 +265,11 @@ footer {
 }
 
 
-.mini-cart .flex {
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+.mini-cart div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 100px;
 }
 
 
@@ -453,10 +463,6 @@ footer {
      .mini-cart ul li span {
           white-space: nowrap;
           font-size: 0.8rem;
-     }
-
-     .mini-cart .checkout {
-          
      }
    }
 

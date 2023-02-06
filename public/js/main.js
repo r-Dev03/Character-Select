@@ -14,15 +14,18 @@ function init() {
 
 init();
 
-//Adding a shopping cart
+//Adding a shopping cart slide out menu
 
 const cart = document.querySelector('.fa-cart-shopping')
 const menu = document.querySelector('.mini-cart')
+const body = document.querySelector('.base') 
 const closeCart = document.querySelector('#mini-cart-close')
 
 cart.addEventListener('click', () => {
-  cart.classList.toggle('is-active') 
-  menu.classList.toggle('is-active') 
+  cart.classList.toggle('is-active')
+  menu.classList.toggle('enable-scroll') 
+  menu.classList.toggle('is-active')
+  body.classList.toggle('disable-scroll')
 })
 
 //Delete Fucntion
@@ -64,6 +67,9 @@ Array.from(addBtn).forEach((el)=>{
 function addAlert(e) {
   alertSuccess.classList.toggle('hidden')
 }
+
+
+
 
 
 
