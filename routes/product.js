@@ -4,8 +4,8 @@ const upload = require("../middleware/multer");
 const productController = require("../controllers/product");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Top Routes - simplified for now
-router.get("/", productController.getProduct);
+//Product Routes - simplified for now
+router.get("/:id", productController.getProduct);
 
 
 module.exports = router;
