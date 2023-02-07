@@ -84,7 +84,7 @@ module.exports = {
         // console.log(req.body
         setTimeout(function () {
           res.redirect(req.get('referer'));
-        }, 2000);
+        }, 1000);
         // res.redirect(req.get('referer'));
     },
 
