@@ -6,7 +6,8 @@ const Product = require('../models/Product');
 module.exports = {
   getProduct: async (req, res) => {
     try{
-      const product = Product.findById(req.params.id)
+      const product =  await Product.findById(req.params.id)
+      console.log(product)
       if(req.user){
         const cart = await getCart(req.user._id)
         res.render('product.ejs', {user: req.user, userCart: cart.items, product : product});

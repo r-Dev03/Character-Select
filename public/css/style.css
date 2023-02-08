@@ -352,7 +352,7 @@ footer {
      margin-top: 20px;
  }
 
- .tops, .bottoms {
+ .tops, .bottoms, .product{
      color: #fff;
      background-color:#171718;
  }
@@ -415,6 +415,43 @@ footer {
      right: 78%;
 }
 
+
+/******************************************
+/* Product Page
+/*******************************************/
+
+.product-single {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     
+
+}
+.product-single img {
+     height: 100%;
+     width: 100%;
+}
+
+.product-single .info {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+
+.product-single .products.flex.container {
+     flex-direction: column;
+}
+
+.product-single .products.flex.container {
+     max-width: 900px;
+}
+
+.product-name {
+     white-space: nowrap;
+}
+
 /******************************************
 /* Responsive Design
 /*******************************************/
@@ -454,6 +491,11 @@ footer {
      .grid {
           grid-template-columns: repeat(1, 1fr);
      }
+
+
+     .product-name {
+          font-size: 0.97rem;
+      }
    }
 
    @media screen and (max-width: 500px) {
