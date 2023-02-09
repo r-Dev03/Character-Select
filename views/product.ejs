@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="/css/loader.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
-    <body class="product">
+    <body class="product base">
 
     <section class="navbar">
         <div class="container flex">
@@ -56,7 +56,7 @@
         <div class="info products">
             <h2 class="product-name"><%= product.name %></h2>
             <h3 class="product-price">$10.00</h3>
-            <form action="/cart/addProduct" method="POST">
+			<form action="/cart/addProduct" method="POST" onsubmit="addAlert()">
                 <button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct" type="submit"> Add To Cart </button>
                 <input type="hidden" name="name" value="<%= product.name %>">
                 <select name="size" id="size" required>
@@ -69,7 +69,10 @@
         </div>
     </section>
 
-
+    <div class="alert-success">
+        <img src="/img/coin.gif" alt="">
+        <h3>Added to cart successfully!</h3>
+    </div>
 
     <script type="text/javascript" src="/js/main.js"></script>
 	<body>

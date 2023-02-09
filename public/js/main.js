@@ -40,7 +40,7 @@ async function deleteProduct(){
   const productId = this.parentNode.dataset.id
   console.log(productId)
   try{
-      const response = await fetch('cart/deleteProduct', {
+      const response = await fetch('/cart/deleteProduct', {
           method: 'delete',
           headers: {'Content-type': 'application/json'},
           body: JSON.stringify({

@@ -13,7 +13,7 @@
 
 
 </head>
-<body class="bottoms">
+<body class="bottoms base">
 	<!--Navigation--> 
 	<section class="navbar">
 		<div class="container flex">
@@ -56,7 +56,7 @@
 				<span>>_Bottoms/ Pants 1</span>
 				<img src="img/FRONT2.jpg" alt="">
 				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
+					<button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct"> Add To Cart </button>
 					<input type="hidden" name="name" value=">_Bottoms/Product">
 					<select name="size" id="size" required>
 						<option value="">None</option>
@@ -139,7 +139,7 @@
 			<section class="products flex">
 				<span>>_Bottoms/ Pants 6</span>
 				<img src="img/FRONT2.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
+				<form action="/cart/addProduct" method="POST" onsubmit="addAlert()">
 					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
 					<input type="hidden" name="name" value=">_Bottoms/Product">
 					<select name="size" id="size" required>
@@ -150,6 +150,11 @@
 					</select>
 				</form>
 			</section>
+		</div>
+
+		<div class="alert-success">
+			<img src="img/coin.gif" alt="">
+			<h3>Added to cart successfully!</h3>
 		</div>
      
     </section>
