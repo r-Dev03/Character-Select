@@ -18,14 +18,14 @@ const cartRoutes = require("./routes/cart")
 const productRoutes = require("./routes/product")
 
 //Use .env file in config folder
-require("dotenv")
-// require("dotenv").config({ path: "./config/.env" });
+require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
 
 //Connect To Database
-const clientPromise = connectDB();
+// const clientPromise = connectDB();
+connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -49,7 +49,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ clientPromise: clientPromise}),
+    store: MongoStore.create({mongoUrl : process.env.DB_STRING}),
   })
 );
 
