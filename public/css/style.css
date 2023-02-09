@@ -460,6 +460,15 @@ footer {
 /* Responsive Design
 /*******************************************/
 
+@media screen and (max-width: 1350px) {
+
+     .hidden {
+          right: 70%;
+     }
+     
+}
+
+
 @media screen and (max-width: 980px) {
      .flex.categories, .flex.support-container {
           flex-direction: column;
@@ -489,6 +498,10 @@ footer {
           white-space: nowrap;
      }
 
+     .hidden {
+          right: 60%;
+     }
+
    }
 
    @media screen and (max-width: 720px) {
@@ -501,6 +514,12 @@ footer {
           font-size: 0.97rem;
       }
 
+
+     .hidden {
+          right: 50%;
+     }
+
+
    }
 
    @media screen and (max-width: 500px) {
@@ -511,6 +530,10 @@ footer {
      .mini-cart ul li span {
           white-space: nowrap;
           font-size: 0.7rem;
+     }
+
+     .hidden {
+          right: 20%;
      }
    }
 
