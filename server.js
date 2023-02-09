@@ -18,7 +18,8 @@ const cartRoutes = require("./routes/cart")
 const productRoutes = require("./routes/product")
 
 //Use .env file in config folder
-require("dotenv").config({ path: "./config/.env" });
+require("dotenv")
+// require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
