@@ -425,6 +425,7 @@ footer {
      align-items: center;
      justify-content: space-around;
      flex-wrap: wrap;
+     padding-top: 20px;
      
 
 }
@@ -440,13 +441,16 @@ footer {
 }
 
 
-.product-single .products.flex.container {
-     flex-direction: column;
+.product-single .flex.container {
+    
 }
 
-.product-single .products.flex.container {
-     max-width: 900px;
-}
+
+.product-single #size {
+     width: 100%;
+     margin-left: 0
+ }
+
 
 .product-name {
      white-space: nowrap;
@@ -477,7 +481,7 @@ footer {
           width: 100px;
      }
 
-     .logo {
+     .logo{
           font-size: 20px;
      }
 
@@ -493,9 +497,10 @@ footer {
      }
 
 
-     .product-name {
+     .product-name, .product-price {
           font-size: 0.97rem;
       }
+
    }
 
    @media screen and (max-width: 500px) {
