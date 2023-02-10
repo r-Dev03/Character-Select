@@ -42,7 +42,7 @@ p {
      margin: 10px 0
 }
 
-img {
+img, object {
      width: 25%;
 }
 

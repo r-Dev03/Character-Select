@@ -16,7 +16,7 @@ init();
 
 //Adding a shopping cart slide out menu
 
-const cart = document.querySelector('.fa-cart-shopping')
+const cart = document.querySelector('.shopping-cart')
 const menu = document.querySelector('.mini-cart')
 const body = document.querySelector('.base') 
 const closeCart = document.querySelector('#mini-cart-close')
