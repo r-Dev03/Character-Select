@@ -61,7 +61,7 @@ const addBtn = document.querySelectorAll('.addProduct')
 const alertSuccess = document.querySelector('.alert-success')
 
 Array.from(addBtn).forEach((el)=>{
-  el.addEventListener('submit', addAlert)
+  el.addEventListener('click', addAlert)
 })
 
 function addAlert(e) {
