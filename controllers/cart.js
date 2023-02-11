@@ -53,39 +53,12 @@ module.exports = {
             catch(err) {
               console.log(err)
             }
-            // const cart = await Cart.findOneAndUpdate({userId : req.user.id}, 
-            //   {$push: { items: {id: currentProduct.id, name: currentProduct.name, img: currentProduct.image, qty: 1} }})
-            // let foundProduct = userCart.find(el => el.id == currentProduct.id)
-
-            //Iterating through user shopping cart to find a matching Product ID
-
-            //-------------------------------------------------------
-            // if (req.user.shoppingCart.some(e => e.id === currentProduct.id)) {
-                //Iterating through User's Shopping Cart to verify if currently selected item already exists, if so increment the quantity property by 1
-                // const foundProduct = req.user.shoppingCart.findIndex(el => el.id === currentProduct.id)
-            //     try {
-            //       await User.findOneAndUpdate(
-            //         { _id: req.user._id, shoppingCart: { '$elemMatch': { id: currentProduct.id } } },
-            //         {'$inc': { 'shoppingCart.$.quantity': 1 }},
-            //       );
-            //         console.log("Quantity +1");
-            //       } catch (err) {
-            //         console.log(err);
-            //       }
-            // //if current product does not exist in user shopping cart add it on
-            // } else {
-            //     req.user.shoppingCart.push({
-            //         id: new ObjectId(currentProduct.id),
-            //         quantity: 1,
-            //     });
-            //     await req.user.save()
-            // }
 
         // console.log(req.body
-        setTimeout(function () {
-          res.redirect(req.get('referer'));
-        }, 1000);
-        // res.redirect(req.get('referer'));
+        // setTimeout(function () {
+        //   res.redirect(req.get('referer'));
+        // }, 1000);
+        res.render(url + '?success')
     },
 
     deleteProduct: async (req, res) => {

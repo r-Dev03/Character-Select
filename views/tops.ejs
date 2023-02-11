@@ -55,7 +55,7 @@
 				<section class="products flex">
 			 		<span><%= el.name %></span>
 		 			<a href="/product/<%= el._id %>"><img src="<%= el.image %>" alt=""></a>
-		 			<form action="/cart/addProduct" method="POST" onsubmit="addAlert()">
+		 			<form action="/cart/addProduct" method="POST">
 					<button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct" type="submit"> Add To Cart </button>
 					<input type="hidden" name="name" value="<%= el.name %>">
 					<select name="size" id="size" required>
@@ -73,6 +73,7 @@
 <div class="alert-success">
 	<img src="img/coin.gif" alt="">
 	<h3>Added to cart successfully!</h3>
+	<a href="#" class="x-button"><i class="fa-solid fa-square-xmark"></i></a>
 </div>
 
     </section> -->

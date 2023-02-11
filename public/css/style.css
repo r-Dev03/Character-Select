@@ -397,7 +397,7 @@ footer {
      display: flex;
      position: fixed;
      top: 6%;
-     right: 100%;
+     right: 75%;
      text-align: center;
      width: 100%;
      max-width: 350px;
@@ -410,6 +410,16 @@ footer {
      transition: 0.2s;
     
 }
+
+.alert-success a {
+     height: 5%;
+     margin-left: 13px;
+}
+
+.hidden-test {
+     right: 100%;
+}
+
 
 .hidden {
      right: 78%;
