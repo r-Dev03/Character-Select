@@ -411,7 +411,7 @@ footer {
     
 }
 
-.alert-success a {
+.alert-success i {
      height: 5%;
      margin-left: 13px;
 }
@@ -472,7 +472,7 @@ footer {
 
 @media screen and (max-width: 1350px) {
 
-     .hidden {
+     .alert-success {
           right: 70%;
      }
      
@@ -508,7 +508,7 @@ footer {
           white-space: nowrap;
      }
 
-     .hidden {
+     .alert-success {
           right: 60%;
      }
 
@@ -525,7 +525,7 @@ footer {
       }
 
 
-     .hidden {
+     .alert-success {
           right: 50%;
      }
 
@@ -542,7 +542,7 @@ footer {
           font-size: 0.7rem;
      }
 
-     .hidden {
+     .alert-success {
           right: 20%;
      }
    }
