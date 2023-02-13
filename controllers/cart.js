@@ -60,8 +60,9 @@ module.exports = {
         // }, 1000);
         let url = req.get('referer')
         console.log(url)
+        url = url.split('?').shift()
+        console.log(url)
         res.redirect(url + '?success');
-        url = (url.split('?').shift())
     },
 
     deleteProduct: async (req, res) => {
