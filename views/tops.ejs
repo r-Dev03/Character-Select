@@ -70,11 +70,21 @@
 			<%})%>
 	</section>
 
-<div class="alert-success">
+<% if (query !== {}) { %>  
+	
+	<div class="alert-success">
+		<img src="img/coin.gif" alt="">
+		<h3>Added to cart successfully!</h3>
+		<i class="fa-solid fa-square-xmark x-button"></i>
+	</div>
+	
+	<% } %>
+
+<!-- <div class="alert-success">
 	<img src="img/coin.gif" alt="">
 	<h3>Added to cart successfully!</h3>
-	<a href="#" class="x-button"><i class="fa-solid fa-square-xmark"></i></a>
-</div>
+	<i class="fa-solid fa-square-xmark x-button"></i>
+</div> -->
 
     </section> -->
 	<script type="text/javascript" src="/js/main.js"></script>

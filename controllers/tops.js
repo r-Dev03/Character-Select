@@ -9,9 +9,10 @@ module.exports = {
       const tops = await Product.find({category: "Tops", size: "small"})
       if(req.user){
         const cart = await getCart(req.user._id)
-        res.render('tops.ejs', {user: req.user, userCart: cart.items, tops: tops});
+        console.log(req.query)
+        res.render('tops.ejs', {user: req.user, userCart: cart.items, tops: tops, query: req.query});
       }else{
-        res.render('tops.ejs', {user: {name: 'Anonymous'}, userCart:[], tops: tops});
+        res.render('tops.ejs', {user: {name: 'Anonymous'}, userCart:[], tops: tops, query : req.query});
       }
     }    
     catch(err){

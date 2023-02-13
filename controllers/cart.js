@@ -58,7 +58,8 @@ module.exports = {
         // setTimeout(function () {
         //   res.redirect(req.get('referer'));
         // }, 1000);
-        res.render(url + '?success')
+        let url = req.get('referer')
+        res.redirect(url + '?success');
     },
 
     deleteProduct: async (req, res) => {
