@@ -10,9 +10,9 @@ module.exports = {
       console.log(product)
       if(req.user){
         const cart = await getCart(req.user._id)
-        res.render('product.ejs', {user: req.user, userCart: cart.items, product : product});
+        res.render('product.ejs', {user: req.user, userCart: cart.items, product : product, req: req});
       }else{
-        res.render('product.ejs', {user: {name: 'Anonymous'}, userCart:[], product : product});
+        res.render('product.ejs', {user: {name: 'Anonymous'}, userCart:[], product : product, req: req});
       }
     }    
     catch(err){

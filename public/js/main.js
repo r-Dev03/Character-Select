@@ -69,7 +69,7 @@ const alertSuccess = document.querySelector('.alert-success')
 removeAlert.addEventListener('click', addAlert)
 
 function addAlert(e) {
-  alertSuccess.classList.toggle('hidden-test')
+  alertSuccess.classList.toggle('hidden')
 }
 
 

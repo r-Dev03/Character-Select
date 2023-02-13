@@ -56,7 +56,7 @@
         <div class="info products">
             <h2 class="product-name"><%= product.name %></h2>
             <h3 class="product-price">$10.00</h3>
-			<form action="/cart/addProduct" method="POST" onsubmit="addAlert()">
+			<form action="/cart/addProduct" method="POST">
                 <button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct" type="submit"> Add To Cart </button>
                 <input type="hidden" name="name" value="<%= product.name %>">
                 <select name="size" id="size" required>
@@ -69,10 +69,15 @@
         </div>
     </section>
 
-    <div class="alert-success">
-        <img src="/img/coin.gif" alt="">
-        <h3>Added to cart successfully!</h3>
-    </div>
+    <% if (req.query.success !== undefined) { %>  
+	
+        <div class="alert-success">
+            <img src="/img/coin.gif" alt="">
+            <h3>Added to cart successfully!</h3>
+            <i class="fa-solid fa-square-xmark x-button"></i>
+        </div>
+        
+        <% } %>
 
     <script type="text/javascript" src="/js/main.js"></script>
 	<body>

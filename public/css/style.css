@@ -397,7 +397,7 @@ footer {
      display: flex;
      position: fixed;
      top: 6%;
-     right: 75%;
+     right: 78%;
      text-align: center;
      width: 100%;
      max-width: 350px;
@@ -416,13 +416,9 @@ footer {
      margin-left: 13px;
 }
 
-.hidden-test {
-     right: 100%;
-}
-
 
 .hidden {
-     right: 78%;
+     right: 100%;
 }
 
 
