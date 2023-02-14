@@ -35,30 +35,38 @@ module.exports = {
     },
 
     addProduct: async (req, res) => {
-            //Using request body to locate a matching product in the Product Collection
-            const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
-            const cart = await Cart.findOne({userId: req.user.id})
-            console.log(cart)
-            try {  
-              if(cart.items.some(e => e.id == currentProduct.id)) {
-                await Cart.findOneAndUpdate(
-                {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
-                {'$inc': { 'items.$.qty': 1 }})
-                console.log("you already got this item")
-                } else {
-                  await Cart.findOneAndUpdate({userId : req.user.id}, 
-                  {$push: { items: {id: currentProduct.id, name: currentProduct.name, size : currentProduct.size, img: currentProduct.image, qty: 1}}})
-            }
-          } 
-            catch(err) {
-              console.log(err)
-            }
+            //Checking if there is a logged in user
+            if (req.user) {
+              //If user is logged in locating product by request body and locating user cart based on user ID
+              const currentProduct = await Product.findOne({name : req.body.name, size : req.body.size})
+              const cart = await Cart.findOne({userId: req.user.id})
+              try {  
+                //Checking if user cart already contains the selected product based on id if so increase the quantity
+                if(cart.items.some(e => e.id == currentProduct.id)) {
+                  await Cart.findOneAndUpdate(
+                  {userId: req.user.id, items: {'$elemMatch': { id: currentProduct.id}}},
+                  {'$inc': { 'items.$.qty': 1 }})
+                  console.log("you already got this item")
+                  } else {
+                    //Otherwise add item to user cart
+                    await Cart.findOneAndUpdate({userId : req.user.id}, 
+                    {$push: { items: {id: currentProduct.id, name: currentProduct.name, size : currentProduct.size, img: currentProduct.image, qty: 1}}})
+              }
+              
+            } 
+              catch(err) {
+                console.log(err)
+              }
+              //Setting url to allow for removal of success query after each addProduct function is called.
+              let url = req.get('referer')
+              url = url.split('?').shift()
+              res.redirect(url + '?success');
+              console.log(cart)
 
-        let url = req.get('referer')
-        console.log(url)
-        url = url.split('?').shift()
-        console.log(url)
-        res.redirect(url + '?success');
+              //Redirecting to index if user is not logged in
+            } else {
+              res.redirect('/signup')
+            }
     },
 
     deleteProduct: async (req, res) => {

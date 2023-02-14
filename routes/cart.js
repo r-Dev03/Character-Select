@@ -6,7 +6,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, cartController.getCart);
 // router.post("/add/:id", cartController.addProduct);
-router.post("/addProduct", ensureAuth, cartController.addProduct)
+router.post("/addProduct", cartController.addProduct)
 
 router.delete("/deleteProduct", cartController.deleteProduct)
 
