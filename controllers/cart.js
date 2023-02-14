@@ -54,10 +54,6 @@ module.exports = {
               console.log(err)
             }
 
-        // console.log(req.body
-        // setTimeout(function () {
-        //   res.redirect(req.get('referer'));
-        // }, 1000);
         let url = req.get('referer')
         console.log(url)
         url = url.split('?').shift()
