@@ -204,7 +204,7 @@ footer {
    .container {
      max-width: 1100px;
      margin: 0 auto;
-     overflow: auto;
+     /* overflow: auto; */
      padding: 0 10px;
 }
 
@@ -447,10 +447,6 @@ footer {
      align-items: center;
 }
 
-
-.product-single .flex.container {
-    
-}
 
 
 .product-single #size {
