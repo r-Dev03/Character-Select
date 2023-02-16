@@ -50,14 +50,15 @@
 
     <!--Bottoms-->
 
-    <section class=" container grid">
-		<div class="flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 1</span>
-				<img src="img/Hunter.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
+	<section class=" container grid">
+		<% bottoms.forEach(el => { %>
+			<div class="flex">
+				<section class="products flex">
+			 		<span><%= el.name %></span>
+		 			<a href="/product/<%= el._id %>"><img src="<%= el.image %>" alt=""></a>
+		 			<form action="/cart/addProduct" method="POST">
+					<button class="btn btn-bottom-stripe btn-bottom-stripe--black addProduct" type="submit"> Add To Cart </button>
+					<input type="hidden" name="name" value="<%= el.name %>">
 					<select name="size" id="size" required>
 						<option value="">None</option>
 						<option value="small">Small</option>
@@ -65,99 +66,21 @@
 						<option value="large">Large</option>
 					</select>
 				</form>
-		</div>
+			  </section>
+			</div>
+			<%})%>
+	</section>
 
-		<div class="flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 2</span>
-				<img src="img/susanoo.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
-					<select name="size" id="size" required>
-						<option value="">None</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-					</select>
-				</form>
-			</section>
-		</div>
-
-		<div class="flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 3</span>
-				<img src="img/Curse_King.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
-					<select name="size" id="size" required>
-						<option value="">None</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-					</select>
-				</form>
-			</section>
-		</div>
-
-		<div class= "flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 4</span>
-				<img src="img/Skull_Pants.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
-					<select name="size" id="size" required>
-						<option value="">None</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-					</select>
-				</form>
-			</section>
-		</div>
-
-		<div class="flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 5</span>
-				<img src="img/Smiley.jpg" alt="">
-				<form action="/cart/addProduct" method="POST">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
-					<select name="size" id="size" required>
-						<option value="">None</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-					</select>
-				</form>
-			</section>
-		</div>
-
-		<div class="flex">
-			<section class="products flex">
-				<span>>_Bottoms/ Pants 6</span>
-				<img src="img/Spider.jpg" alt="">
-				<form action="/cart/addProduct" method="POST" onsubmit="addAlert()">
-					<button class="btn btn-bottom-stripe btn-bottom-stripe--black"> Add To Cart </button>
-					<input type="hidden" name="name" value=">_Bottoms/Product">
-					<select name="size" id="size" required>
-						<option value="">None</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-					</select>
-				</form>
-			</section>
-		</div>
-    </section>
+	<% if (req.query.success !== undefined) { %>  
 	
-	<div class="alert-success">
-		<img src="img/coin.gif" alt="">
-		<h3>Added to cart successfully!</h3>
-		<i class="fa-solid fa-square-xmark x-button"></i>
-	</div>
+		<div class="alert-success">
+			<img src="img/coin.gif" alt="">
+			<h3>Added to cart successfully!</h3>
+			<i class="fa-solid fa-square-xmark x-button"></i>
+		</div>
+		
+		<% } %>
+	
 	<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
