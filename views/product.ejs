@@ -46,7 +46,12 @@
                  <li><span>No Armor Equipped...</span></li>
             <% } %>
         </ul>
-        <div class = "checkout"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Checkout</button></a></div>
+        
+        <% if(user._id) { %>
+			<div class = "checkout"><a href="checkout"><button class="btn btn-pushable btn-pushable--black">Checkout</button></a></div>
+		<%} else {%>
+			<div class = "checkout"><a href="/signup"><button class="btn btn-pushable btn-pushable--black">Please Signup</button></a></div>
+		<% } %>
     </nav>
 
     <section class="product-single">

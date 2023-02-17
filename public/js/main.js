@@ -62,10 +62,6 @@ async function deleteProduct(){
 const removeAlert = document.querySelector('.x-button')
 const alertSuccess = document.querySelector('.alert-success')
 
-// Array.from(addBtn).forEach((el)=>{
-//   el.addEventListener('submit', addAlert)
-// })
-
 removeAlert.addEventListener('click', addAlert)
 
 function addAlert(e) {

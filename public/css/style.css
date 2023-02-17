@@ -418,9 +418,10 @@ footer {
 }
 
 
-.hidden {
+ .alert-success.hidden {
      right: 100%;
 }
+
 
 
 /******************************************
