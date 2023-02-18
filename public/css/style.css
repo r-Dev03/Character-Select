@@ -499,7 +499,7 @@ header {
           width: 50%;
      }
 
-     .btn-pushable {
+     .btn-pushable, .btn-primary {
           width: 100px;
      }
 
