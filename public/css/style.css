@@ -383,6 +383,10 @@ header {
      margin-left: 25%;
  }
 
+ #size option {
+     text-align: center;
+ }
+
  .container .flex {
      align-items: flex-start;
  }
