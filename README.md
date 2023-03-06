@@ -1,5 +1,5 @@
 # Character Select
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+A full-stack online clothing store app following a retro design with authentication and user cart functionality.
 
 **Link to project:** https://character-select.up.railway.app/
 
