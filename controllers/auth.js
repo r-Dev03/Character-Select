@@ -9,7 +9,7 @@ exports.getLogin = (req, res) => {
   res.render("login", {
     title: "Login",
     req: req,
-    guest: "Guest",
+    guest: "Guest@gmail.com",
     guestPW: "GuestUser",
   });
 };
