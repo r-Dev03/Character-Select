@@ -507,6 +507,10 @@ header {
           width: 100px;
      }
 
+     .btn-primary {
+          margin: 10px;
+     }
+
      .logo{
           font-size: 20px;
      }
