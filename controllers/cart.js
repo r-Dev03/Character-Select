@@ -62,7 +62,8 @@ module.exports = {
               url = url.split('?').shift()
               res.redirect(url + '?success');
               console.log(cart)
-
+			  //Removing query string upon refresh to prevent success alert continuously   
+			
               //Redirecting to index if user is not logged in
             } else {
               res.redirect('/signup')
