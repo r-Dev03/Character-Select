@@ -8,3 +8,4 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/", supportController.getSupport);
 
 module.exports = router;
+
