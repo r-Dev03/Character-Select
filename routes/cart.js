@@ -6,8 +6,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, cartController.getCart);
 // router.post("/add/:id", cartController.addProduct);
-router.post("/addProduct", cartController.addProduct)
+router.post("/addProduct", cartController.addProduct);
 
-router.delete("/deleteProduct", cartController.deleteProduct)
+router.delete("/deleteProduct", cartController.deleteProduct);
 
 module.exports = router;

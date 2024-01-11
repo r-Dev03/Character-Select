@@ -4,7 +4,7 @@ const User = require("../models/User");
 const Product = require('../models/Product');
 
 module.exports = {
-  getProduct: async (req, res) => {
+  getProduct: async (req, res      ) => {
     try{
       const product =  await Product.findById(req.params.id)
       console.log(product)

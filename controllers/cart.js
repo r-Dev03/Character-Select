@@ -8,7 +8,7 @@ const Cart = require("../models/Cart");
 const { rawListeners } = require("../models/Product");
 
 module.exports = {
-    getCart: async (user) => {
+    getCart: async (user      ) => {
         //Retrieving the items in user's cart by ID and loading them
         //Ideally would want to find products based on matching the product id's that exist in the user cart to retreive proper information for each product. I.E images
         try {
