@@ -58,7 +58,7 @@
 	<section class=" container grid">
 		<% bottoms.forEach(el => { %>
 			<div class="flex">
-				<section class="products flex">
+				<section class="products flex bottom">
 			 		<span class="bottom-name name"><%= el.name %></span>
 		 			<a href="/product/<%= el._id %>"><img src="<%= el.image %>" alt=""></a>
 		 			<form action="/cart/addProduct" method="POST" class="bottom-form">

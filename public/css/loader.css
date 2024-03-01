@@ -1,10 +1,10 @@
- .loader {
+.loader {
   font-size: 20px;
   color: #333;
 }
 
 .loader::after {
-  content: '\2026';
+  content: "\2026";
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
@@ -16,4 +16,5 @@
   to {
     width: 1.25em;
   }
-} 
+}
+
