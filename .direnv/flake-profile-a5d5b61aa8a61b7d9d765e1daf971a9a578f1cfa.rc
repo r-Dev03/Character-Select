@@ -153,7 +153,7 @@ name='nix-shell-env'
 export name
 nativeBuildInputs='/nix/store/fxly5x870ssyw5rbvdi58jbhc4j03mzk-nodejs-18.19.1 /nix/store/vvszi5p2yphdmm5lrxiziy69l0j1gwmf-tailwindcss-language-server-0.0.16'
 export nativeBuildInputs
-out='/Users/r-dev/Documents/Dev/Character-Select/outputs/out'
+out='/Users/r-dev/Developer/projects/Character-Select/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -184,7 +184,7 @@ preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
-prefix='/Users/r-dev/Documents/Dev/Character-Select/outputs/out'
+prefix='/Users/r-dev/Developer/projects/Character-Select/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs
