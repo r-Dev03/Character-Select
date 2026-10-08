@@ -9,7 +9,7 @@
 
 ![Character Select demo](https://res.cloudinary.com/dtyc44fjq/image/upload/v1678075789/Clothing%20Store/chrome_st6gn1WmdZ_jrjvvo.gif)
 
-Shoppers browse tops and bottoms, pick a size, and build a cart tied to their account. Pages are rendered on the server with EJS, and the retro look is a custom stylesheet layered on Bootstrap.
+Shoppers browse tops and bottoms, pick a size, and build a cart tied to their account. Pages are rendered on the server with EJS. The shop pages are styled with a custom retro stylesheet, and the login, signup, and profile pages use Bootstrap.
 
 ## Highlights
 
