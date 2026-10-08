@@ -13,9 +13,9 @@ Shoppers browse tops and bottoms, pick a size, and build a cart tied to their ac
 
 ## Highlights
 
-- Passport.js login with bcrypt-hashed passwords and one-click guest login
+- Passport.js login with bcrypt-hashed passwords and a pre-filled guest login
 - Sessions stored in MongoDB, so logins survive server restarts
-- Per-user carts that track size variants, using atomic MongoDB updates for quantities
+- Per-user carts that track size variants, incrementing quantities in place with MongoDB's `$inc`
 
 ## How It Works
 
@@ -23,7 +23,7 @@ Shoppers browse tops and bottoms, pick a size, and build a cart tied to their ac
 
 **Products:** each size of an item is its own product document, so the cart stores exactly which size was chosen. Images are hosted on Cloudinary.
 
-**Cart updates:** each user has one cart document. Adding an item that's already in it increments that entry's quantity in place:
+**Cart updates:** each user gets a cart document, created the first time they open a shop page. Adding an item that's already in it increments that entry's quantity in place:
 
 ```js
 await Cart.findOneAndUpdate(
@@ -32,7 +32,7 @@ await Cart.findOneAndUpdate(
 );
 ```
 
-The positional `$` operator targets the matching array element, so MongoDB updates the quantity atomically instead of the app reading, changing, and rewriting the whole cart. Removing works the same way with `-1`, and the entry is dropped when its quantity reaches zero.
+The positional `$` operator targets the matching array element, so MongoDB increments that entry's quantity in place instead of the app rewriting the cart. Removing an item uses `$inc: -1` while its quantity is above one; removing the last unit filters the entry out of the cart's items array.
 
 ## Getting Started
 
@@ -55,23 +55,18 @@ Fill in `config/.env`. Use your Atlas connection string for `DB_STRING` if you'r
 DB_STRING=mongodb://localhost:27017/character-select
 PORT=3000
 SESSION_SECRET=any_long_random_string
-
-# Optional, only needed for Cloudinary uploads
-CLOUD_NAME=your_cloud_name
-API_KEY=your_api_key
-API_SECRET=your_api_secret
 ```
 
 Then run `npm start` (or `npm run dev` for auto-reload) and open `http://localhost:3000`.
 
 - **Adding products:** edit the details in `addProduct.js`, then run `node addProduct.js`.
-- **Guest login:** the login page pre-fills `Guest@gmail.com` / `GuestUser`. On a fresh database, sign up with those credentials once so the guest button works.
+- **Guest login:** the **Continue As Guest** button on the signup page opens the login form pre-filled with `Guest@gmail.com` / `GuestUser`. On a fresh database, sign up with those credentials once first.
 
 ## Tech Stack
 
-Node.js · Express · MongoDB / Mongoose · Passport.js · bcrypt · express-session / connect-mongo · EJS · Bootstrap 5 · Cloudinary
+Node.js · Express · MongoDB / Mongoose · Passport.js · bcrypt · express-session / connect-mongo · EJS · Bootstrap 5 · Cloudinary (image hosting)
 
 ## Known Limitations
 
-- **No payment step.** Carts persist and the checkout page lists the order, but no payment is processed.
+- **No payment step.** The checkout page is a placeholder: carts persist, but nothing is charged.
 - **Products are added by script.** There's no admin page for managing inventory.
