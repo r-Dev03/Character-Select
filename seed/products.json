@@ -1,0 +1,74 @@
+[
+  {
+    "name": ">_Tops/Kirby T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT1-Black.jpg"
+  },
+  {
+    "name": ">_Tops/Mario T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT2-Black.jpg"
+  },
+  {
+    "name": ">_Tops/Zelda Cartridge T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT3-Black.jpg"
+  },
+  {
+    "name": ">_Tops/Deku Mask T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT4-Black.jpg"
+  },
+  {
+    "name": ">_Tops/FireRed Cartridge T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT5-Black.jpg"
+  },
+  {
+    "name": ">_Tops/Link T-Shirt",
+    "category": "Tops",
+    "price": 10,
+    "image": "/img/FRONT6-Black.jpg"
+  },
+  {
+    "name": ">_Bottoms/Spider Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/Spider.jpg"
+  },
+  {
+    "name": ">_Bottoms/Skull Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/Skull_Pants.jpg"
+  },
+  {
+    "name": ">_Bottoms/Smiley Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/Smiley.jpg"
+  },
+  {
+    "name": ">_Bottoms/Curse King Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/Curse_King.jpg"
+  },
+  {
+    "name": ">_Bottoms/Hunter Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/Hunter.jpg"
+  },
+  {
+    "name": ">_Bottoms/Susanoo Pants",
+    "category": "Bottoms",
+    "price": 10,
+    "image": "/img/susanoo.jpg"
+  }
+]

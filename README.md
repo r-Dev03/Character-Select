@@ -7,13 +7,13 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![EJS](https://img.shields.io/badge/EJS-B4CA65?style=flat&logo=ejs&logoColor=black)](https://ejs.co/)
 
-![Character Select demo](https://res.cloudinary.com/dtyc44fjq/image/upload/v1678075789/Clothing%20Store/chrome_st6gn1WmdZ_jrjvvo.gif)
+![Character Select demo](public/img/Character-Select.gif)
 
 Shoppers browse tops and bottoms, pick a size, and build a cart tied to their account. Pages are rendered on the server with EJS. The shop pages are styled with a custom retro stylesheet, and the login, signup, and profile pages use Bootstrap.
 
 ## Highlights
 
-- Passport.js login with bcrypt-hashed passwords and a pre-filled guest login
+- Passport.js login with bcrypt-hashed passwords and one-click guest login
 - Sessions stored in MongoDB, so logins survive server restarts
 - Per-user carts that track size variants, incrementing quantities in place with MongoDB's `$inc`
 
@@ -21,7 +21,7 @@ Shoppers browse tops and bottoms, pick a size, and build a cart tied to their ac
 
 **Structure:** Express routes hand requests to controllers (auth, products, cart, checkout, profile), which read and write three Mongoose models: `User`, `Product`, and `Cart`.
 
-**Products:** each size of an item is its own product document, so the cart stores exactly which size was chosen. Images are hosted on Cloudinary.
+**Products:** each size of an item is its own product document, so the cart stores exactly which size was chosen. Product images are served from `public/img`.
 
 **Cart updates:** each user gets a cart document, created the first time they open a shop page. Adding an item that's already in it increments that entry's quantity in place:
 
@@ -59,14 +59,15 @@ SESSION_SECRET=any_long_random_string
 
 Then run `npm start` (or `npm run dev` for auto-reload) and open `http://localhost:3000`.
 
-- **Adding products:** edit the details in `addProduct.js`, then run `node addProduct.js`.
-- **Guest login:** the **Continue As Guest** button on the signup page opens the login form pre-filled with `Guest@gmail.com` / `GuestUser`. On a fresh database, sign up with those credentials once first.
+On startup, the app seeds the database with the 12-item catalog from `seed/products.json` (each item in small, medium, and large) and a guest account. Seeding only adds what's missing, so restarts never create duplicates. To seed without starting the server, run `npm run seed`.
+
+To try the store without signing up, click **Continue As Guest** on the signup page.
 
 ## Tech Stack
 
-Node.js · Express · MongoDB / Mongoose · Passport.js · bcrypt · express-session / connect-mongo · EJS · Bootstrap 5 · Cloudinary (image hosting)
+Node.js · Express · MongoDB / Mongoose · Passport.js · bcrypt · express-session / connect-mongo · EJS · Bootstrap 5
 
 ## Known Limitations
 
 - **No payment step.** The checkout page is a placeholder: carts persist, but nothing is charged.
-- **Products are added by script.** There's no admin page for managing inventory.
+- **The catalog lives in `seed/products.json`.** There's no admin page for managing inventory.

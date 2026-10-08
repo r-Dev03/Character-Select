@@ -1,3 +1,4 @@
+const seed = require("./seed");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -25,7 +26,7 @@ require("./config/passport")(passport);
 
 //Connect To Database
 // const clientPromise = connectDB();
-connectDB();
+connectDB().then(seed);
 
 //Using EJS for views
 app.set("view engine", "ejs");
